@@ -32,7 +32,7 @@ const Box = styled.div`
 
   return (
     <Box>
-    <Field type={type} placeholder={placeholder}/> 
+    <Field type={type} placeholder={placeholder} data-testid="my-input" /> 
     <Icon><img src={src} alt={alt}/></Icon>
     </Box>
   )
