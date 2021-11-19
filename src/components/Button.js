@@ -12,7 +12,8 @@ const Button = () => {
     box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 50px;
     padding: 5px 0;
-    width: 50.5%;
+    width: 100%;
+    height: 60px;
     &:hover {
       cursor:pointer;
       background: linear-gradient(90deg, #FF2D04 100%, #C13216 0%);

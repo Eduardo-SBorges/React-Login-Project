@@ -41,40 +41,40 @@ const CurrentTime = () => {
 
   switch (month) {
   case 0:
-    month = 'January';
+    month = 'Janeiro';
     break;
   case 1:
-    month = 'February';
+    month = 'Fevereiro';
     break;
   case 2:
-    month = 'March';
+    month = 'Março';
     break;
   case 3:
-    month = 'April';
+    month = 'Abril';
     break;
   case 4:
-    month = 'May';
+    month = 'Maio';
     break;
   case 5:
-    month = 'June';
+    month = 'Junho';
     break;
   case 6:
-    month = 'July';
+    month = 'Julho';
     break;
   case 7:
-    month = 'August';
+    month = 'Agosto';
     break;
   case 8:
-    month = 'September';
+    month = 'Setembro';
     break;
   case 9:
-    month = 'October';
+    month = 'Outubro';
     break;
   case 10:
-    month = 'November';
+    month = 'Novembro';
     break;
   case 11:
-    month = 'December';
+    month = 'Dezembro';
     break;
     default:
 }
