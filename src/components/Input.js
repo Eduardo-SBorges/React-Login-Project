@@ -14,10 +14,6 @@ const Input = ({type, placeholder, src, alt}) => {
       padding-left: 20px;
       font-size: 16px;
     }
-    &:after {
-      content: "oi";
-      color: red;
-    }
   `
 
   const Icon = styled.div`
