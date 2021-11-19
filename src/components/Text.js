@@ -2,13 +2,15 @@ import React from 'react'
 import styled  from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Text = ({text, size, color, weight}) => {
-  const Paragraph = styled.p`
-  font-size: ${size};
-  color: ${color};
+const Paragraph = styled.p`
+  font-size: ${props => props.size};
+  color: ${props => props.color};
   font-family: 'Mark Pro';
-  font-weight: ${weight};
+  font-weight: ${props => props.weight};
 `
+
+const Text = ({text, size, color, weight}) => {
+  
 
   return (
     <Paragraph size={size} color={color} weight={weight}>{text}</Paragraph>
@@ -18,11 +20,12 @@ const Text = ({text, size, color, weight}) => {
 Text.propTypes = {
   text: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
 }
 
 Text.defaultProps = {
-  weight: "400"
+  weight: "400",
+  color: "#fff"
 }
 
-export default Text
+export default Text;
