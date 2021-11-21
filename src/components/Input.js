@@ -4,40 +4,49 @@ import PropTypes from 'prop-types';
 
 const Field = styled.input`
   background-color: transparent;
-  border-radius: 50px;
-  border: 1px solid #ffffff;
-  height: 60px;
-  width: 50%;
+  border: none;
+  width: 100%;
+  padding: 16px 0;
+  margin-left: 7%;
+  font-size: 16px;
+  color: #ffffff;
   &::placeholder {
-    padding-left: 20px;
     font-size: 16px;
+    color: #ffffff;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
   }
 `;
 
 const Icon = styled.div`
-  position: absolute;
-  left: 47%;
   display: inline-block;
   vertical-align: middle;
+  margin-right: 4%;
 `;
 
-  const Box = styled.div`
+const Box = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 50px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   height: 60px;
   width: 100%;
   margin: ${(props) => props.margin};
 `;
 
-const Input = ({ type, placeholder, src, alt }) => {
+const Input = ({ type, placeholder, src, alt, margin }) => {
   return (
     <Box margin={margin}>
       <Field type={type} placeholder={placeholder} />
-      <Icon><img src={src} alt={alt} /></Icon>
+      <Icon>
+        <img src={src} alt={alt} />
+      </Icon>
     </Box>
   );
 };
