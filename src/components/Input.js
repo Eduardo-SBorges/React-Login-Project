@@ -21,24 +21,23 @@ const Icon = styled.div`
   vertical-align: middle;
 `;
 
-const Box = styled.div`
-  width: auto;
+  const Box = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+  height: 60px;
+  width: 100%;
+  margin: ${(props) => props.margin};
 `;
 
 const Input = ({ type, placeholder, src, alt }) => {
   return (
-    <Box>
-      <Field
-        type={type}
-        placeholder={placeholder}
-        data-testid="test-input-component"
-      />
-      <Icon>
-        <img src={src} alt={alt} />
-      </Icon>
+    <Box margin={margin}>
+      <Field type={type} placeholder={placeholder} />
+      <Icon><img src={src} alt={alt} /></Icon>
     </Box>
   );
 };

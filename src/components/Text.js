@@ -26,11 +26,15 @@ Text.propTypes = {
   text: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
-};
+  weight: PropTypes.string,
+  margin: PropTypes.string,
+  display: PropTypes.string,
+  top: PropTypes.string,
+}
 
 Text.defaultProps = {
-  weight: '400',
-  color: '#fff',
-};
+  weight: "400",
+  color: '#fff'
+}
 
 export default Text;
