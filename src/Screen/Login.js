@@ -14,6 +14,7 @@ const Login = () => {
         color: #fff;
         height: 100vh;
     `;
+
     return (
         <ContainerStyled>
             <ContainerLeft />
