@@ -7,14 +7,16 @@ const Paragraph = styled.p`
   color: ${(props) => props.color};
   font-family: 'Mark Pro';
   font-weight: ${(props) => props.weight};
+  margin: ${(props) => props.margin};
 `;
 
-const Text = ({ text, size, color, weight }) => {
+const Text = ({ text, size, color, weight, margin }) => {
   return (
     <Paragraph
       size={size}
       color={color}
       weight={weight}
+      margin={margin}
       data-testid="test-text-component"
     >
       {text}
@@ -28,13 +30,11 @@ Text.propTypes = {
   color: PropTypes.string,
   weight: PropTypes.string,
   margin: PropTypes.string,
-  display: PropTypes.string,
-  top: PropTypes.string,
-}
+};
 
 Text.defaultProps = {
-  weight: "400",
-  color: '#fff'
-}
+  weight: '400',
+  color: '#fff',
+};
 
 export default Text;
