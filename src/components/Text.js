@@ -1,23 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const Text = ({ text, size, color, weight, margin, display, top, ...props }) => {
-  const Paragraph = styled.p`
-    font-size: ${size};
-    color: ${color};
-    font-family: 'Mark Pro';
-    font-weight: ${weight};
-    margin: ${margin};
-    display: ${display};
-    top: ${top};
-`
+const Paragraph = styled.p`
+  font-size: ${(props) => props.size};
+  color: ${(props) => props.color};
+  font-family: 'Mark Pro';
+  font-weight: ${(props) => props.weight};
+`;
 
+const Text = ({ text, size, color, weight }) => {
   return (
-    <Paragraph size={size} color={color} margin={margin} weight={weight}
-      display={display} top={top} {...props}>{text}</Paragraph>
-  )
-}
+    <Paragraph
+      size={size}
+      color={color}
+      weight={weight}
+      data-testid="test-text-component"
+    >
+      {text}
+    </Paragraph>
+  );
+};
 
 Text.propTypes = {
   text: PropTypes.string.isRequired,
