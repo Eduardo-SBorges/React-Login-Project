@@ -8,7 +8,8 @@ const Field = styled.input`
   width: 100%;
   padding: 16px 0;
   margin-left: 7%;
-  font-size: 16px;
+  font-size: ${(props) => props.fontSize};
+  letter-spacing: ${(props) => props.letterSpacing};
   color: #ffffff;
   &::placeholder {
     font-size: 16px;
@@ -35,15 +36,36 @@ const Box = styled.div`
   justify-content: space-between;
   border-radius: 50px;
   border: 1px solid #ffffff;
+  border-color: ${(props) => props.borderColor};
   height: 60px;
   width: 100%;
   margin: ${(props) => props.margin};
 `;
 
-const Input = ({ type, placeholder, src, alt, margin }) => {
+const Input = ({
+  type,
+  placeholder,
+  src,
+  alt,
+  margin,
+  borderColor,
+  fontSize,
+  letterSpacing,
+  onBlur,
+  onChange,
+  value,
+}) => {
   return (
-    <Box margin={margin}>
-      <Field type={type} placeholder={placeholder} />
+    <Box margin={margin} borderColor={borderColor}>
+      <Field
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+        fontSize={fontSize}
+        letterSpacing={letterSpacing}
+        onBlur={onBlur}
+        value={value}
+      />
       <Icon>
         <img src={src} alt={alt} />
       </Icon>
@@ -56,6 +78,15 @@ Text.propTypes = {
   placeholder: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  fontSize: PropTypes.string,
+  margin: PropTypes.string,
+  borderColor: PropTypes.string,
+  letterSpacing: PropTypes.string,
+};
+
+Text.defaultProps = {
+  fontSize: '16px',
+  letterSpacing: '0',
 };
 
 export default Input;
