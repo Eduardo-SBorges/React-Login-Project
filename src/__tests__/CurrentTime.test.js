@@ -3,16 +3,16 @@ import CurrentTime from '../components/CurrentTime';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-describe("[CurrentTime's Component] must be in the document.", () => {
+describe("[CurrentTime's Component] must render in the home page.", () => {
   const component = render(<CurrentTime />);
 
-  test('This must be in the document.', () => {
+  test("[CurrentTime's Component] must render in the home page.", () => {
     expect(
       component.getByTestId('test-CurrentTime-component'),
     ).toBeInTheDocument();
   });
 
-  test('This must show the current time.', () => {
+  test("[CurrentTime's Component] must show the current time in Brasilia-UF Brazil.", () => {
     render(<CurrentTime />);
 
     const newDate = new Date();
@@ -24,7 +24,7 @@ describe("[CurrentTime's Component] must be in the document.", () => {
     expect(screen.getByText(time)).toBeInTheDocument();
   });
 
-  test('This must show the current date.', () => {
+  test("[CurrentTime's Component] must show the current date in the Gregorian Calendar.", () => {
     render(<CurrentTime />);
 
     const newDate = new Date();
@@ -106,7 +106,7 @@ describe("[CurrentTime's Component] must be in the document.", () => {
     expect(screen.getByText(date)).toBeInTheDocument();
   });
 
-  test("This must have CSS's styles.", () => {
+  test("[CurrentTime's Component] must have CSS's styles.", () => {
     const component = render(<CurrentTime />);
 
     expect(component.getByTestId('test-CurrentTime-component')).toHaveStyle({
