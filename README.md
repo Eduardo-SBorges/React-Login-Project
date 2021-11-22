@@ -1,7 +1,11 @@
-<h1 align="center"> 🚧  Em contrução 🚀 React-Login-Project 🚧 </h1><br />
+<h1 align="center"> 🚧 Em contrução 🚀 React-Login-Project 🚧 </h1>
+<br />
 
-## :computer: Sobre o projeto
+Para visualizar o projeto, acesse o link abaixo:
 
+Deploy do Projeto: https://eduardo-sborges.github.io/React-Login-Project/
+
+:computer: Sobre o projeto
 O projeto está sendo desenvolvido como parte do Programa de Bolsas de desenvolvimento front-end React da Compasso UOL.
 
 ## 📺 Preview
@@ -49,7 +53,6 @@ O projeto está sendo desenvolvido como parte do Programa de Bolsas de desenvolv
 
 - Editor: <a href="https://code.visualstudio.com/">Visual Studio Code</a>
 - Layout: <a href="https://www.figma.com/">Figma<a/></a>
-
 
 ### 🛠 Tecnologias
 
