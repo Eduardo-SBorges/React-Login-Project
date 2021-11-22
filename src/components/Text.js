@@ -1,36 +1,40 @@
-import React from 'react'
-import styled  from 'styled-components'
-import PropTypes from 'prop-types'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const Text = ({text, size, color, weight, margin, display, top, ...props}) => {
-  const Paragraph = styled.p`
-  font-size: ${size};
-  color: ${color};
+const Paragraph = styled.p`
+  font-size: ${(props) => props.size};
+  color: ${(props) => props.color};
   font-family: 'Mark Pro';
-  font-weight: ${weight};
-  margin: ${margin};
-  display: ${display};
-  top: ${top};
-`
+  font-weight: ${(props) => props.weight};
+  margin: ${(props) => props.margin};
+`;
 
+const Text = ({ text, size, color, weight, margin }) => {
   return (
-    <Paragraph size={size} color={color} margin={margin} weight={weight} 
-    display={display} top={top} {...props}>{text}</Paragraph>
-  )
-}
+    <Paragraph
+      size={size}
+      color={color}
+      weight={weight}
+      margin={margin}
+      data-testid="test-text-component"
+    >
+      {text}
+    </Paragraph>
+  );
+};
 
 Text.propTypes = {
   text: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
   weight: PropTypes.string,
   margin: PropTypes.string,
-  display: PropTypes.string,
-  top: PropTypes.string,
-}
+};
 
 Text.defaultProps = {
-  weight: "400"
-}
+  weight: '400',
+  color: '#fff',
+};
 
 export default Text;
