@@ -7,7 +7,7 @@ import IconLogin from '../assets/svg/icon-user.svg';
 import IconSenha from '../assets/svg/icon-password.svg';
 import whiteLogo from '../assets/img/whiteLogo.png';
 
-const ContainerLeftX = styled.div`
+const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,9 +46,9 @@ const BoxLogo = styled.div`
   }
 `;
 
-const ContainerLeft = () => {
+const LoginForms = () => {
   return (
-    <ContainerLeftX data-testid="test-ContainerLeft-component">
+    <LoginForm data-testid="test-LoginForms-component">
       <BoxLogo>
         <img src={whiteLogo} alt="whiteLogo" />
       </BoxLogo>
@@ -77,8 +77,8 @@ const ContainerLeft = () => {
         />
         <Button />
       </ContainerBox>
-    </ContainerLeftX>
+    </LoginForm>
   );
 };
 
-export default ContainerLeft;
+export default LoginForms;
