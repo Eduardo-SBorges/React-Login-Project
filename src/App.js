@@ -5,10 +5,10 @@ import Login from './Screen/Login';
 const App = () => {
   return (
     <>
-      <GlobalStyle />
+    <GlobalStyle/>
       <Login />
     </>
   );
-};
+}
 
 export default App;

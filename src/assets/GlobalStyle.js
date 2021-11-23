@@ -14,10 +14,10 @@ const GlobalStyle = createGlobalStyle`
     figure, figcaption, footer, header, hgroup,
     menu, nav, output, ruby, section, summary,
     time, mark, audio, video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
     }
   `
 

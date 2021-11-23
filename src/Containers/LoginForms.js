@@ -8,7 +8,7 @@ import IconLogin from '../assets/svg/icon-user.svg';
 import IconSenha from '../assets/svg/icon-password.svg';
 import whiteLogo from '../assets/img/whiteLogo.png';
 
-const ContainerLeftX = styled.div`
+const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +53,7 @@ const BoxError = styled.div`
   align-items: center;
 `;
 
-const ContainerLeft = ({ value }) => {
+const LoginForms = () => {
   const email = useInputValidation('email');
   const password = useInputValidation('password');
 
@@ -104,7 +104,7 @@ const ContainerLeft = ({ value }) => {
   }
 
   return (
-    <ContainerLeftX data-testid="test-ContainerLeft-component">
+    <LoginForm data-testid="test-LoginForms-component">
       <BoxLogo>
         <img src={whiteLogo} alt="whiteLogo" />
       </BoxLogo>
@@ -153,8 +153,8 @@ const ContainerLeft = ({ value }) => {
           <Button />
         </form>
       </ContainerBox>
-    </ContainerLeftX>
+    </LoginForm>
   );
 };
 
-export default ContainerLeft;
+export default LoginForms;

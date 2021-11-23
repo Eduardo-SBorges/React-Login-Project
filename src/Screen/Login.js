@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContainerLeft from '../Containers/ContainerLeft';
-import ContainerRight from '../Containers/ContainerRight';
+import LoginForms from '../Containers/LoginForms';
+import LoginImages from '../Containers/LoginImages';
 
 const ContainerStyled = styled.div`
   display: flex;
@@ -16,8 +16,8 @@ const ContainerStyled = styled.div`
 const Login = () => {
   return (
     <ContainerStyled data-testid="test-Login-component">
-      <ContainerLeft />
-      <ContainerRight />
+      <LoginForms />
+      <LoginImages />
     </ContainerStyled>
   );
 };
