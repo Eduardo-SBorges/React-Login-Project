@@ -1,5 +1,15 @@
-import React, { useState, useEffect } from "react";
-import Text from "./Text";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import Text from './Text';
+
+const BoxTimer = styled.div`
+  text-align: center;
+`;
+
+const TextA = styled.div`
+  width: 90px;
+  margin-top: -10%;
+`;
 
 const Timer = ({ s }) => {
   const [seconds, setSeconds] = useState(s);
@@ -14,7 +24,7 @@ const Timer = ({ s }) => {
     // }
 
     if (seconds === 0) {
-      alert("End of Session!");
+      alert('End of Session!');
     }
 
     return () => clearInterval(interval);
@@ -22,8 +32,12 @@ const Timer = ({ s }) => {
 
   return (
     <>
-      <Text text={seconds} size="48px" />
-      <Text text='Seconds' size="14px" weight="700" />
+      <BoxTimer>
+        <Text text={`${seconds}`} size="48px" />
+        <TextA>
+          <Text text="Seconds" size="14px" />
+        </TextA>
+      </BoxTimer>
     </>
   );
 };
