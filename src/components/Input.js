@@ -51,7 +51,6 @@ const Input = ({
   borderColor,
   fontSize,
   letterSpacing,
-  onBlur,
   onChange,
   value,
 }) => {
@@ -63,7 +62,6 @@ const Input = ({
         onChange={onChange}
         fontSize={fontSize}
         letterSpacing={letterSpacing}
-        onBlur={onBlur}
         value={value}
       />
       <Icon>

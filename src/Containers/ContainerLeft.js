@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import useError from '../hooks/useError';
+import useInputValidation from '../hooks/useInputValidation';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Text from '../components/Text';
@@ -53,55 +53,53 @@ const BoxError = styled.div`
   align-items: center;
 `;
 
-const ContainerLeft = ({ error, value }) => {
-  const email = useError('email');
-  const password = useError('password');
+const ContainerLeft = ({ value }) => {
+  const email = useInputValidation('email');
+  const password = useInputValidation('password');
 
   const [errorMessage, setErrorMessage] = React.useState('');
+  const [errorUser, setErrorUser] = React.useState(false);
+  const [errorPassword, setErrorPassword] = React.useState(false);
 
-  React.useEffect(() => {
-    if ((email.error, password.error)) {
-      setErrorMessage('Ops, e-mail e senha inválida!');
-    } else {
-      if (email.error === 'email') {
-        setErrorMessage('Ops, e-mail inválido!');
-      }
-      if (password.error === 'password') {
-        setErrorMessage('Ops, senha inválida!');
-      }
-    }
-    if (!email.error && !password.error) {
-      setErrorMessage('');
-    }
-    if (email.error && !password.error) {
-      setErrorMessage('Ops, e-mail inválido!');
-    }
-    if (!email.error && password.error) {
-      setErrorMessage('Ops, senha inválida!');
-    }
-  }, [email, password]);
+  const login = {
+    email: 'email.usuario@compasso.com.br',
+    password: 'React@2021',
+  };
 
   function handleSubmit(event) {
     event.preventDefault();
+
     if (
       email.validate() &&
       password.validate() &&
-      password.value === 'React@2021' &&
-      email.value === 'email.usuario@compasso.com.br'
+      password.value === login.password &&
+      email.value === login.email
     ) {
-    } else {
-      if (
-        password.value !== 'React@2021' &&
-        email.value !== 'email.usuario@compasso.com.br'
-      ) {
-        setErrorMessage('Ops, e-mail e senha inválida!');
-      }
-      if (email.value !== 'email.usuario@compasso.com.br') {
-        setErrorMessage('Ops, e-mail inválido!');
-      }
-      if (password.value !== 'React@2021') {
-        setErrorMessage('Ops, senha inválida!');
-      }
+      setErrorMessage('');
+      setErrorUser(false);
+      setErrorPassword(false);
+
+      console.log('Login realizado com sucesso!');
+
+    } else if (
+      password.value !== login.password &&
+      email.value !== login.email
+    ) {
+      setErrorPassword(true);
+      setErrorUser(true);
+      setErrorMessage('Ops, e-mail e senha inválida');
+    } else if (
+      password.value !== login.password &&
+      email.value === login.email
+    ) {
+      setErrorMessage('Ops, senha inválida');
+      setErrorPassword(true);
+    } else if (
+      password.value === login.password &&
+      email.value !== login.email
+    ) {
+      setErrorMessage('Ops, e-mail inválido');
+      setErrorUser(true);
     }
   }
 
@@ -125,7 +123,7 @@ const ContainerLeft = ({ error, value }) => {
             type="text"
             placeholder="Usuário"
             fontSize="16px"
-            borderColor={email.error ? '#E9B425' : '#fff'}
+            borderColor={errorUser ? '#E9B425' : '#fff'}
             src={IconLogin}
             alt="login"
             {...email}
@@ -136,7 +134,7 @@ const ContainerLeft = ({ error, value }) => {
             placeholder="Senha"
             fontSize={password.value ? '50px' : '16px'}
             letterSpacing={password.value ? '5px' : '0'}
-            borderColor={password.error ? '#E9B425' : '#fff'}
+            borderColor={errorPassword ? '#E9B425' : '#fff'}
             src={IconSenha}
             alt="password"
             {...password}
