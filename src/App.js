@@ -1,18 +1,14 @@
 import React from 'react';
 import GlobalStyle from './assets/GlobalStyle';
-// import Login from './Screen/Login';
-import Home from './Screen/Home';
-// import CurrentTime from './components/CurrentTime';
+import Home from './screen/Home';
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      {/* <Login /> */}
       <Home />
-      {/* <CurrentTime /> */}
     </>
   );
-};
+}
 
 export default App;

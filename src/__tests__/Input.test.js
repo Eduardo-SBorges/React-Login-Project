@@ -3,8 +3,8 @@ import Input from '../components/Input';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-describe("[Text's Component] must be in the document.", () => {
-  test("This component must have a placeholder's text.", () => {
+describe("[Input's Component] must render in the login forms.", () => {
+  test("[Input's Component] must have a placeholder's text.", () => {
     const component = render(
       <Input type="text" placeholder="Usuário" src="" alt="" />,
     );
@@ -14,7 +14,7 @@ describe("[Text's Component] must be in the document.", () => {
     ).toBeInTheDocument();
   });
 
-  test("This component must have CSS's styles.", () => {
+  test("[Input's Component] have CSS's styles.", () => {
     const component = render(
       <Input
         type="text"

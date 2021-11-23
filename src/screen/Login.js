@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContainerLeft from '../Containers/ContainerLeft';
-import ContainerRight from '../Containers/ContainerRight';
+import LoginForms from '../containers/LoginForms';
+import LoginImages from '../containers/LoginImages';
 
 const Login = () => {
   const ContainerStyled = styled.div`
@@ -16,8 +16,8 @@ const Login = () => {
 
   return (
     <ContainerStyled data-testid="test-Login-component">
-      <ContainerLeft />
-      <ContainerRight />
+      <LoginForms />
+      <LoginImages />
     </ContainerStyled>
   );
 };
