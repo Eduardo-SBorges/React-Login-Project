@@ -31,14 +31,13 @@ const Icon = styled.div`
 
 const Box = styled.div`
   height: 60px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 50px;
   border: 1px solid #ffffff;
   border-color: ${(props) => props.borderColor};
-  height: 60px;
-  width: 100%;
   margin: ${(props) => props.margin};
 `;
 
@@ -55,7 +54,7 @@ const Input = ({
   value,
 }) => {
   return (
-    <Box margin={margin} borderColor={borderColor}>
+    <Box margin={margin} borderColor={borderColor} data-testid="test-input-component">
       <Field
         type={type}
         placeholder={placeholder}

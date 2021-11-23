@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoginForms from '../Containers/LoginForms';
-import LoginImages from '../Containers/LoginImages';
+import LoginForms from '../containers/LoginForms';
+import LoginImages from '../containers/LoginImages';
 
 const ContainerStyled = styled.div`
   display: flex;

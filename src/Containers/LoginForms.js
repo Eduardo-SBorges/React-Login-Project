@@ -79,8 +79,12 @@ const LoginForms = () => {
       setErrorUser(false);
       setErrorPassword(false);
 
-      console.log('Login realizado com sucesso!');
+      // REACT ROUTER ENTRARÁ AQUI <----------------------------------------------------;
 
+    } else if (!password.value && !email.value) {
+      setErrorPassword(true);
+      setErrorUser(true);
+      setErrorMessage('Ops, preencha os campos.');
     } else if (
       password.value !== login.password &&
       email.value !== login.email

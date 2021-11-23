@@ -17,7 +17,7 @@ describe("[Button's Component] must render in the login forms.", () => {
       border: 'none',
       background: 'linear-gradient(90deg, #FF2D04 0%, #C13216 100%)',
       padding: '5px 0',
-      width: '50.5%',
+      width: '100%',
     });
   });
 });
