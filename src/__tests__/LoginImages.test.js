@@ -1,5 +1,5 @@
 import * as React from 'react';
-import LoginImages from '../Containers/LoginImages';
+import LoginImages from '../containers/LoginImages';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 

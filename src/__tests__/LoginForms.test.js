@@ -1,5 +1,5 @@
 import * as React from 'react';
-import LoginForms from '../Containers/LoginForms';
+import LoginForms from '../containers/LoginForms';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
