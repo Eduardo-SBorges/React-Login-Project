@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import Text from './Text';
 
@@ -11,10 +12,11 @@ const TextA = styled.div`
   margin-top: -10%;
 `;
 
+
 const Timer = ({ s }) => {
   const [seconds, setSeconds] = useState(s);
   //   const [isActive, setIsActive] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     let interval = null;
     // if (isActive) {
@@ -24,7 +26,7 @@ const Timer = ({ s }) => {
     // }
 
     if (seconds === 0) {
-      alert('End of Session!');
+      navigate('/')
     }
 
     return () => clearInterval(interval);

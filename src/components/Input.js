@@ -8,19 +8,22 @@ const Field = styled.input`
   width: 100%;
   padding: 16px 0;
   margin-left: 7%;
+  margin-top: ${(props) => props.marginTop};
   font-size: ${(props) => props.fontSize};
   letter-spacing: ${(props) => props.letterSpacing};
   color: #ffffff;
   &::placeholder {
-    font-size: 16px;
+    font-size: ${(props) => props.fontSize};
     color: #ffffff;
   }
   &:focus {
     outline: none;
   }
+ 
   &:focus::-webkit-input-placeholder {
     color: transparent;
   }
+ 
 `;
 
 const Icon = styled.div`
@@ -52,6 +55,7 @@ const Input = ({
   letterSpacing,
   onChange,
   value,
+  marginTop,
 }) => {
   return (
     <Box margin={margin} borderColor={borderColor} data-testid="test-input-component">
@@ -62,6 +66,8 @@ const Input = ({
         fontSize={fontSize}
         letterSpacing={letterSpacing}
         value={value}
+        marginTop={marginTop}
+        autocomplete="off"
       />
       <Icon>
         <img src={src} alt={alt} />

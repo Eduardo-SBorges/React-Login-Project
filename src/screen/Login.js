@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import LoginForms from '../containers/LoginForms';
 import LoginImages from '../containers/LoginImages';
 
+
 const ContainerStyled = styled.div`
   display: flex;
   align-items: center;

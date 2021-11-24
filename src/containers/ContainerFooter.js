@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Text from '../components/Text';
 import Timer from '../components/Timer';
+import { useNavigate } from 'react-router-dom';
 
 const BoxFooter = styled.footer`
   display: flex;
@@ -91,7 +92,13 @@ const LogOut = styled.div`
   }
 `;
 
-function Footer() {
+const Footer = () => {
+
+  const navigate = useNavigate();
+
+  const handleNavigate = () => navigate('/');
+  
+
   return (
     <>
       <BoxFooter>
@@ -121,7 +128,7 @@ function Footer() {
             <Text text="Navegando" size="12px" color="#C13216" />
           </Continue>
           <LogOut>
-            <Text text="Logout" size="12px" weight="700" />
+            <Text text="Logout" size="12px" weight="700" onClick={handleNavigate}/>
           </LogOut>
         </BoxButtons>
       </BoxFooter>

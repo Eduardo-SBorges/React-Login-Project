@@ -7,6 +7,7 @@ import Text from '../components/Text';
 import IconLogin from '../assets/svg/icon-user.svg';
 import IconSenha from '../assets/svg/icon-password.svg';
 import whiteLogo from '../assets/img/whiteLogo.png';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = styled.div`
   display: flex;
@@ -56,7 +57,7 @@ const BoxError = styled.div`
 const LoginForms = () => {
   const email = useInputValidation('email');
   const password = useInputValidation('password');
-
+  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = React.useState('');
   const [errorUser, setErrorUser] = React.useState(false);
   const [errorPassword, setErrorPassword] = React.useState(false);
@@ -78,8 +79,7 @@ const LoginForms = () => {
       setErrorMessage('');
       setErrorUser(false);
       setErrorPassword(false);
-
-      // REACT ROUTER ENTRARÁ AQUI <----------------------------------------------------;
+      navigate('/home');
 
     } else if (!password.value && !email.value) {
       setErrorPassword(true);
@@ -136,10 +136,11 @@ const LoginForms = () => {
             margin="0 0 24%"
             type="password"
             placeholder="Senha"
-            fontSize={password.value ? '50px' : '16px'}
+            fontSize={password.value ? '40px' : '16px'}
             letterSpacing={password.value ? '5px' : '0'}
             borderColor={errorPassword ? '#E9B425' : '#fff'}
             src={IconSenha}
+            marginTop='-1%'
             alt="password"
             {...password}
           />
