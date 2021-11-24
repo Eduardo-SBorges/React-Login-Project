@@ -10,15 +10,14 @@ const Paragraph = styled.p`
   margin: ${(props) => props.margin};
 `;
 
-const Text = ({ text, size, color, weight, margin, onClick }) => {
+const Text = ({ text, size, color, weight, margin }) => {
   return (
     <Paragraph
       size={size}
       color={color}
       weight={weight}
       margin={margin}
-      onClick={onClick}
-      data-testid="test-text-component"
+      data-testid="test-text-component"      
     >
       {text}
     </Paragraph>

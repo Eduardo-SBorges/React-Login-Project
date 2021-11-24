@@ -1,14 +1,14 @@
-import React,{useContext,useState} from 'react';
-import styled from 'styled-components';
-import useInputValidation from '../hooks/useInputValidation';
-import Button from '../components/Button';
-import Input from '../components/Input';
-import Text from '../components/Text';
-import IconLogin from '../assets/svg/icon-user.svg';
-import IconSenha from '../assets/svg/icon-password.svg';
-import whiteLogo from '../assets/img/whiteLogo.png';
-import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../UserContext';
+import React, { useContext, useState } from "react";
+import styled from "styled-components";
+import useInputValidation from "../hooks/useInputValidation";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import Text from "../components/Text";
+import IconLogin from "../assets/svg/icon-user.svg";
+import IconSenha from "../assets/svg/icon-password.svg";
+import whiteLogo from "../assets/img/whiteLogo.png";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
 const LoginForm = styled.div`
   display: flex;
@@ -56,16 +56,16 @@ const BoxError = styled.div`
 `;
 
 const LoginForms = () => {
-  const email = useInputValidation('email');
-  const password = useInputValidation('password');
+  const email = useInputValidation("email");
+  const password = useInputValidation("password");
   const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const [errorUser, setErrorUser] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
   const { setLogin } = useContext(UserContext);
   const login = {
-    email: 'email.usuario@compasso.com.br',
-    password: 'React@2021',
+    email: "email.usuario@compasso.com.br",
+    password: "React@2021",
   };
 
   function handleSubmit(event) {
@@ -77,34 +77,33 @@ const LoginForms = () => {
       password.value === login.password &&
       email.value === login.email
     ) {
-      setErrorMessage('');
+      setErrorMessage("");
       setErrorUser(false);
       setErrorPassword(false);
       setLogin(true);
-      navigate('/home');
-
+      navigate("/home");
     } else if (!password.value && !email.value) {
       setErrorPassword(true);
       setErrorUser(true);
-      setErrorMessage('Ops, preencha os campos.');
+      setErrorMessage("Ops, preencha os campos.");
     } else if (
       password.value !== login.password &&
       email.value !== login.email
     ) {
       setErrorPassword(true);
       setErrorUser(true);
-      setErrorMessage('Ops, e-mail e senha inválida');
+      setErrorMessage("Ops, e-mail e senha inválida");
     } else if (
       password.value !== login.password &&
       email.value === login.email
     ) {
-      setErrorMessage('Ops, senha inválida');
+      setErrorMessage("Ops, senha inválida");
       setErrorPassword(true);
     } else if (
       password.value === login.password &&
       email.value !== login.email
     ) {
-      setErrorMessage('Ops, e-mail inválido');
+      setErrorMessage("Ops, e-mail inválido");
       setErrorUser(true);
     }
   }
@@ -129,7 +128,7 @@ const LoginForms = () => {
             type="text"
             placeholder="Usuário"
             fontSize="16px"
-            borderColor={errorUser ? '#E9B425' : '#fff'}
+            borderColor={errorUser ? "#E9B425" : "#fff"}
             src={IconLogin}
             alt="login"
             {...email}
@@ -138,11 +137,11 @@ const LoginForms = () => {
             margin="0 0 24%"
             type="password"
             placeholder="Senha"
-            fontSize={password.value ? '40px' : '16px'}
-            letterSpacing={password.value ? '5px' : '0'}
-            borderColor={errorPassword ? '#E9B425' : '#fff'}
+            fontSize={password.value ? "40px" : "16px"}
+            letterSpacing={password.value ? "5px" : "0"}
+            borderColor={errorPassword ? "#E9B425" : "#fff"}
             src={IconSenha}
-            marginTop='-1%'
+            marginTop="-1%"
             alt="password"
             {...password}
           />

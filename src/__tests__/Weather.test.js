@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Weather from '../components/Weather';
-import { getWeather } from '../API/api';
+import { getWeather } from '../api/api';
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';

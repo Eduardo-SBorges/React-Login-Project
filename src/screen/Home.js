@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContainerFooter from '../containers/ContainerFooter';
+import HomeFooter from '../containers/HomeFooter';
 import Weather from '../components/Weather';
 import CurrentTime from '../components/CurrentTime';
 import Text from '../components/Text';
@@ -50,6 +50,7 @@ const BoxBallLogo = styled.div`
     }
     left: -10%;
     bottom: -15%;
+    position: fixed;
   }
 `;
 
@@ -71,7 +72,7 @@ const BoxText = styled.div`
       }
     }
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1115px) {
     p {
       &:nth-child(even) {
         font-size: 14px;
@@ -84,7 +85,7 @@ const BoxText = styled.div`
       }
     }
   }
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
@@ -103,7 +104,7 @@ const BoxCurrentTime = styled.div`
       }
     }
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
@@ -126,7 +127,7 @@ const BoxFooter = styled.div`
 
 const Home = () => {
   return (
-    <HomeStyle>
+    <HomeStyle data-testid="test-Home-component">
       <BoxHome data-testid='test-ContainerHome-component'>
         <BoxBlackLogo>
           <img src={blackLogo} alt='Black Logo Compasso' />
@@ -180,7 +181,7 @@ const Home = () => {
         <Weather />
       </BoxWeather>
       <BoxFooter>
-        <ContainerFooter />
+        <HomeFooter />
       </BoxFooter>
     </HomeStyle>
   );

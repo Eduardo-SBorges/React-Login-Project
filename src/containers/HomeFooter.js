@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import Text from '../components/Text';
-import Timer from '../components/Timer';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import Text from "../components/Text";
+import Timer from "../components/Timer";
+import { useNavigate } from "react-router-dom";
 
 const BoxFooter = styled.footer`
   display: flex;
@@ -20,7 +20,7 @@ const Line = styled.div`
   margin-bottom: 2%;
   margin-left: 1%;
   margin-right: 2%;
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
@@ -29,7 +29,7 @@ const BoxTextA = styled.div`
   text-align: end;
   margin-left: 10%;
   width: 45%;
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
@@ -40,7 +40,8 @@ const BoxTimer = styled.div`
   align-items: center;
   width: 21%;
   margin-right: 12%;
-  @media (max-width: 940px) {
+  padding: 1px 0;
+  @media (max-width: 960px) {
     display: none;
   }
 `;
@@ -48,22 +49,22 @@ const BoxTimer = styled.div`
 const BoxTextB = styled.div`
   text-align: end;
   width: 40%;
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
 
 const BoxButtons = styled.div`
-display: flexbox;
-justify-content: end;
-width: 30%;
-align-self: stretch;
-@media (max-width: 940px) {
-  display: flex;
+  display: flexbox;
+  justify-content: end;
+  width: 30%;
+  align-self: stretch;
+  @media (max-width: 960px) {
+    display: flex;
     flex-direction: row-reverse;
     width: 100%;
   }
-`
+`;
 
 const Continue = styled.div`
   display: flex;
@@ -73,8 +74,8 @@ const Continue = styled.div`
   height: 100%;
   width: 50%;
   background-color: #fff;
-  cursor: pointer;
-  @media (max-width: 940px) {
+  /* cursor: pointer; */
+  @media (max-width: 960px) {
     width: 100%;
     height: 13vh;
   }
@@ -86,20 +87,19 @@ const LogOut = styled.div`
   align-items: center;
   width: 50%;
   cursor: pointer;
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     width: 25%;
     height: 13vh;
   }
 `;
 
 const Footer = () => {
-
   const navigate = useNavigate();
-  const handleNavigate = () => navigate('/');
+  const handleNavigate = () => navigate("/");
 
   return (
     <>
-      <BoxFooter>
+      <BoxFooter data-testid="test-HomeFooter-component">
         <BoxTextA>
           <Text
             text="Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a"
@@ -125,13 +125,17 @@ const Footer = () => {
             <Text text="Continuar" size="12px" color="#C13216" />
             <Text text="Navegando" size="12px" color="#C13216" />
           </Continue>
-          <LogOut>
-            <Text text="Logout" size="12px" weight="700" onClick={handleNavigate}/>
+          <LogOut onClick={handleNavigate}>
+            <Text            
+              text="Logout"
+              size="12px"
+              weight="700"
+            />
           </LogOut>
         </BoxButtons>
       </BoxFooter>
     </>
   );
-}
+};
 
 export default Footer;
