@@ -94,7 +94,7 @@ const LogOut = styled.div`
 function Footer() {
   return (
     <>
-      <BoxFooter>
+      <BoxFooter data-testid="test-HomeFooter-component">
         <BoxTextA>
           <Text
             text="Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a"

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContainerFooter from '../containers/ContainerFooter';
+import HomeFooter from '../containers/HomeFooter';
 import Weather from '../components/Weather';
 import CurrentTime from '../components/CurrentTime';
 import Text from '../components/Text';
@@ -126,7 +126,7 @@ const BoxFooter = styled.div`
 
 const Home = () => {
   return (
-    <HomeStyle>
+    <HomeStyle data-testid="test-Home-component">
       <BoxHome data-testid='test-ContainerHome-component'>
         <BoxBlackLogo>
           <img src={blackLogo} alt='Black Logo Compasso' />
@@ -180,7 +180,7 @@ const Home = () => {
         <Weather />
       </BoxWeather>
       <BoxFooter>
-        <ContainerFooter />
+        <HomeFooter />
       </BoxFooter>
     </HomeStyle>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
 import GlobalStyle from './assets/GlobalStyle';
-import Home from './screen/Home';
+import Login from './screen/Login';
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Home />
+      <Login />
     </>
   );
 }
