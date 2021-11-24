@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 const Paragraph = styled.p`
   font-size: ${(props) => props.size};
   color: ${(props) => props.color};
-  font-family: 'Mark Pro';
+  /* font-family: 'Mark Pro'; */
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
   font-weight: ${(props) => props.weight};
   margin: ${(props) => props.margin};
 `;
@@ -29,7 +31,7 @@ Text.propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
   weight: PropTypes.string,
-  margin: PropTypes.string,
+  margin: PropTypes.string
 };
 
 Text.defaultProps = {

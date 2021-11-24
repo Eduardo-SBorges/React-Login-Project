@@ -7,6 +7,7 @@ const CurrentTime = () => {
 
   const hours = newDate.getHours();
   const minutes = newDate.getUTCMinutes();
+  
   const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 
   const day = newDate.getDate();
@@ -88,9 +89,10 @@ const CurrentTime = () => {
   `;
 
   return (
+
     <Box data-testid="test-CurrentTime-component">
       <Text text={time} size="144px" color="#222" margin="0" weight="700" />
-      <Text text={date} size="14px" color="#222" margin="-40px 0 0 0" />
+      <Text text={date} size="14px" color="#222" margin="-13% 0 0 0" />
     </Box>
   );
 };

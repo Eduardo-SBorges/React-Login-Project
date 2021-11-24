@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getWeather } from '../API/api';
+import { getWeather } from '../api/api';
 
 const Weather = () => {
   const [weather, setWeather] = React.useState(false);
