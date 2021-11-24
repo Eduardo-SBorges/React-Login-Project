@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext,useState} from 'react';
 import styled from 'styled-components';
 import useInputValidation from '../hooks/useInputValidation';
 import Button from '../components/Button';
@@ -8,6 +8,7 @@ import IconLogin from '../assets/svg/icon-user.svg';
 import IconSenha from '../assets/svg/icon-password.svg';
 import whiteLogo from '../assets/img/whiteLogo.png';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../UserContext';
 
 const LoginForm = styled.div`
   display: flex;
@@ -58,10 +59,10 @@ const LoginForms = () => {
   const email = useInputValidation('email');
   const password = useInputValidation('password');
   const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = React.useState('');
-  const [errorUser, setErrorUser] = React.useState(false);
-  const [errorPassword, setErrorPassword] = React.useState(false);
-
+  const [errorMessage, setErrorMessage] = useState('');
+  const [errorUser, setErrorUser] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
+  const { setLogin } = useContext(UserContext);
   const login = {
     email: 'email.usuario@compasso.com.br',
     password: 'React@2021',
@@ -79,6 +80,7 @@ const LoginForms = () => {
       setErrorMessage('');
       setErrorUser(false);
       setErrorPassword(false);
+      setLogin(true);
       navigate('/home');
 
     } else if (!password.value && !email.value) {

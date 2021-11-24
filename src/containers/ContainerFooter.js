@@ -95,9 +95,7 @@ const LogOut = styled.div`
 const Footer = () => {
 
   const navigate = useNavigate();
-
   const handleNavigate = () => navigate('/');
-  
 
   return (
     <>
