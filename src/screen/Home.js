@@ -43,7 +43,7 @@ const BoxBallLogo = styled.div`
   img {
     width: 85%;
   }
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     img {
       width: 100vw;
       height: 100vh;
@@ -59,7 +59,7 @@ const BoxText = styled.div`
   right: 0;
   text-align: end;
   margin-right: 11.3%;
-  @media (max-width: 1320px) {
+  @media (max-width: 1385px) {
     p {
       &:nth-child(even) {
         font-size: 14px;
@@ -72,7 +72,7 @@ const BoxText = styled.div`
       }
     }
   }
-  @media (max-width: 1115px) {
+  @media (max-width: 1180px) {
     p {
       &:nth-child(even) {
         font-size: 14px;
@@ -85,7 +85,7 @@ const BoxText = styled.div`
       }
     }
   }
-  @media (max-width: 960px) {
+  @media (max-width: 1030px) {
     display: none;
   }
 `;
@@ -104,7 +104,7 @@ const BoxCurrentTime = styled.div`
       }
     }
   }
-  @media (max-width: 960px) {
+  @media (max-width: 1030px) {
     display: none;
   }
 `;
@@ -113,7 +113,7 @@ const BoxWeather = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  @media (max-width: 940px) {
+  @media (max-width: 960px) {
     right: 0%;
     top: 0%;
   }

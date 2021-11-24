@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Field = styled.input`
   background-color: transparent;
@@ -19,11 +19,10 @@ const Field = styled.input`
   &:focus {
     outline: none;
   }
- 
+
   &:focus::-webkit-input-placeholder {
     color: transparent;
   }
- 
 `;
 
 const Icon = styled.div`
@@ -42,6 +41,7 @@ const Box = styled.div`
   border: 1px solid #ffffff;
   border-color: ${(props) => props.borderColor};
   margin: ${(props) => props.margin};
+  overflow: hidden;
 `;
 
 const Input = ({
@@ -58,7 +58,11 @@ const Input = ({
   marginTop,
 }) => {
   return (
-    <Box margin={margin} borderColor={borderColor} data-testid="test-input-component">
+    <Box
+      margin={margin}
+      borderColor={borderColor}
+      data-testid="test-input-component"
+    >
       <Field
         type={type}
         placeholder={placeholder}
@@ -88,8 +92,8 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  fontSize: '16px',
-  letterSpacing: '0',
+  fontSize: "16px",
+  letterSpacing: "0",
 };
 
 export default Input;
