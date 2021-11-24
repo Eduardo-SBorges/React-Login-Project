@@ -41,7 +41,7 @@ const BoxBallLogo = styled.div`
   left: 0;
   bottom: 0;
   img {
-    width: 75%;
+    width: 85%;
   }
   @media (max-width: 940px) {
     img {
