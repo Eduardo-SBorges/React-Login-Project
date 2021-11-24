@@ -3,14 +3,14 @@ import Text from '../components/Text';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-describe("[Text's Component] must be in the document.", () => {
+describe("[Text's Component] must render in the login forms.", () => {
   const component = render(<Text text="Teste" size="16px" color="black" />);
 
-  test('This must be in the document.', () => {
+  test("[Text's Component] must render in the login forms.", () => {
     expect(component.getByTestId('test-text-component')).toBeInTheDocument();
   });
 
-  test("This must have CSS's styles.", () => {
+  test("[Text's Component] must have CSS's styles.", () => {
     const component = render(<Text text="Teste" size="16px" color="black" />);
 
     expect(component.getByTestId('test-text-component')).toHaveStyle({

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import img1 from '../assets/img/img1.png';
 import whiteLogo from '../assets/img/whiteLogo.png';
 
-const ContainerRightX = styled.div`
+const LoginImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -24,13 +24,13 @@ const BoxLogo = styled.div`
   margin-top: 3%;
 `;
 
-const ContainerRight = () => {
+const LoginImages = () => {
   return (
-    <ContainerRightX data-testid="test-ContainerRight-component">
+    <LoginImage data-testid="test-LoginImages-component">
       <BoxLogo>
         <img src={whiteLogo} alt="whiteLogo" />
       </BoxLogo>
-    </ContainerRightX>
+    </LoginImage>
   );
 };
-export default ContainerRight;
+export default LoginImages;
