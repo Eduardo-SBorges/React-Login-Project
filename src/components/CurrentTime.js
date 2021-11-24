@@ -7,7 +7,8 @@ const CurrentTime = () => {
 
   const hours = newDate.getHours();
   const minutes = newDate.getUTCMinutes();
-  const time = `${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
+  
+  const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 
   const day = newDate.getDate();
   let week = newDate.getDay() - 1;

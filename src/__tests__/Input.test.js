@@ -21,15 +21,13 @@ describe("[Input's Component] must render in the login forms.", () => {
         placeholder="Usuário"
         src=""
         alt=""
-        data-testid="test-input-component"
       />,
     );
-    expect(component.getByTestId('test-input-component')).toHaveStyle({
-      backgroundColor: 'transparent',
-      borderRadius: '50px',
-      border: '1px solid #FFFFFF',
+    expect(component.getByTestId("test-input-component")).toHaveStyle({
+      border: '1px solid #ffffff',
+      width: '100%',
       height: '60px',
-      width: '50%',
+      borderRadius: '50px',
     });
   });
 });
