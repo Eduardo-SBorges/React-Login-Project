@@ -5,29 +5,30 @@ import Timer from '../components/Timer';
 
 const BoxFooter = styled.footer`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 5%;
+  height: 13vh;
   background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
 `;
 
 const Line = styled.div`
   color: #fff;
   font-size: 60px;
+  width: 5%;
   margin-top: 1%;
   margin-bottom: 2%;
   margin-left: 1%;
-  margin-right: 5%;
-  @media (max-width: 768px) {
+  margin-right: 2%;
+  @media (max-width: 940px) {
     display: none;
   }
 `;
 
 const BoxTextA = styled.div`
   text-align: end;
-  margin-left: 14%;
-  @media (max-width: 768px) {
+  margin-left: 10%;
+  width: 45%;
+  @media (max-width: 940px) {
     display: none;
   }
 `;
@@ -36,17 +37,17 @@ const BoxTimer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 10%;
-  gap: 20%;
-  margin-right: 20%;
-  @media (max-width: 768px) {
+  width: 21%;
+  margin-right: 12%;
+  @media (max-width: 940px) {
     display: none;
   }
 `;
 
 const BoxTextB = styled.div`
   text-align: end;
-  @media (max-width: 768px) {
+  width: 40%;
+  @media (max-width: 940px) {
     display: none;
   }
 `;
@@ -54,11 +55,12 @@ const BoxTextB = styled.div`
 const BoxButtons = styled.div`
 display: flexbox;
 justify-content: end;
+width: 30%;
 align-self: stretch;
-margin-right: 4%;
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   display: flex;
     flex-direction: row-reverse;
+    width: 100%;
   }
 `
 
@@ -68,10 +70,11 @@ const Continue = styled.div`
   align-items: center;
   flex-direction: column;
   height: 100%;
-  width: 65%;
+  width: 50%;
   background-color: #fff;
-  @media (max-width: 768px) {
-    width: 80vw;
+  cursor: pointer;
+  @media (max-width: 940px) {
+    width: 100%;
     height: 13vh;
   }
 `;
@@ -80,9 +83,10 @@ const LogOut = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 65%;
-  @media (max-width: 768px) {
-    width: 20vw;
+  width: 50%;
+  cursor: pointer;
+  @media (max-width: 940px) {
+    width: 25%;
     height: 13vh;
   }
 `;
@@ -112,13 +116,13 @@ function Footer() {
           <Timer s={600} />
         </BoxTimer>
         <BoxButtons>
-        <Continue>
-          <Text text="Continuar" size="12px" color="#C13216" />
-          <Text text="Navegando" size="12px" color="#C13216" />
-        </Continue>
-        <LogOut>
-          <Text text="Logout" size="12px" weight="700" margin="0 50px 0 50px" />
-        </LogOut>
+          <Continue>
+            <Text text="Continuar" size="12px" color="#C13216" />
+            <Text text="Navegando" size="12px" color="#C13216" />
+          </Continue>
+          <LogOut>
+            <Text text="Logout" size="12px" weight="700" />
+          </LogOut>
         </BoxButtons>
       </BoxFooter>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoginForms from '../Containers/LoginForms';
-import LoginImages from '../Containers/LoginImages';
+import LoginForms from '../containers/LoginForms';
+import LoginImages from '../containers/LoginImages';
 
 const Login = () => {
   const ContainerStyled = styled.div`
