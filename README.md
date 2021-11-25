@@ -1,4 +1,4 @@
-<h1 align="center"> 🚧  Em contrução 🚀 React-Login-Project 🚧 </h1><br />
+<h1 align="center"> 🚧  🚀 React-Login-Project 🚀 🚧 </h1><br />
 
 Para visualizar o projeto, acesse o link abaixo:
 
@@ -6,7 +6,7 @@ Deploy do Projeto: https://eduardo-sborges.github.io/React-Login-Project/
 
 ## :computer: Sobre o projeto
 
-O projeto está sendo desenvolvido como parte do Programa de Bolsas de desenvolvimento front-end React da Compasso UOL.
+O projeto foi desenvolvido como parte do Programa de Bolsas de desenvolvimento front-end React da Compasso UOL, utilizando testes unitários com React Testing Library e testes e2e com o Cypress, assim como consumo de API's para o desenvolvimento de uma SPA usando Styled Components.
 
 ## 📺 Preview
 
@@ -40,7 +40,7 @@ O projeto está sendo desenvolvido como parte do Programa de Bolsas de desenvolv
  </tr>
 </table>
 
-## ⚙️ Funcionalidades
+### ⚙️ Funcionalidades
 
 - Autenticação de usuário para acesso ao sistema interno do site Compasso UOL:
 
@@ -49,7 +49,7 @@ O projeto está sendo desenvolvido como parte do Programa de Bolsas de desenvolv
   - validação dos campos login e senha
   - Mensagem de erro para usuário caso as informações inseridas não estejam de acordo com o formato correto ou os dados inseridos não estejam de acordo com o cadastro do usuário que deseja efetuar o login.
 
-#### Utilitários
+### 🛠 Utilitários
 
 - Editor: <a href="https://code.visualstudio.com/">Visual Studio Code</a>
 - Layout: <a href="https://www.figma.com/">Figma<a/></a>
@@ -64,3 +64,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [CSS](https://reactnative.dev/)
 - [HTML](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
+- [Cypress](https://https://www.cypress.io/)
+- [React testing library](https://testing-library.com/)
