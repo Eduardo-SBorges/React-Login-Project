@@ -118,7 +118,7 @@ const Footer = () => {
             <Text text="Application" size="14px" />
             <Text text="refresh in" size="14px" />
           </BoxTextB>
-          <Timer s={5} />
+          <Timer s={600} />
         </BoxTimer>
         <BoxButtons>
           <Continue>

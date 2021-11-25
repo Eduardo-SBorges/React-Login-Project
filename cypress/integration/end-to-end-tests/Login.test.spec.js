@@ -91,7 +91,7 @@ describe('Logout UI', () => {
         cy.get('[data-cy=input-password]').type('React@2021')
         cy.get('[data-cy=btn-submit]').click()
 
-        cy.wait(5000)
+        cy.wait(600000)
 
         cy.url().should('include', '/')
     })
