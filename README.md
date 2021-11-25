@@ -4,6 +4,8 @@ Para visualizar o projeto, acesse o link abaixo:
 
 Deploy do Projeto: https://eduardo-sborges.github.io/React-Login-Project/
 
+https://user-images.githubusercontent.com/82469192/143334464-1ab5fb24-a257-41b7-85aa-7bf6ce9a3583.mp4
+
 ## :computer: Sobre o projeto
 
 O projeto foi desenvolvido como parte do Programa de Bolsas de desenvolvimento front-end React da Compasso UOL, utilizando testes unitários com React Testing Library e testes e2e com o Cypress, assim como consumo de API's para o desenvolvimento de uma SPA usando Styled Components.
