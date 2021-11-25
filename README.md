@@ -4,7 +4,7 @@ Para visualizar o projeto, acesse o link abaixo:
 
 Deploy do Projeto: https://eduardo-sborges.github.io/React-Login-Project/
 
-https://user-images.githubusercontent.com/82469192/143334464-1ab5fb24-a257-41b7-85aa-7bf6ce9a3583.mp4
+https://user-images.githubusercontent.com/82469192/143359996-5886f9ed-8f9d-4174-b794-4425da49e121.mp4
 
 ## :computer: Sobre o projeto
 
