@@ -118,14 +118,14 @@ const Footer = () => {
             <Text text="Application" size="14px" />
             <Text text="refresh in" size="14px" />
           </BoxTextB>
-          <Timer s={600} />
+          <Timer s={5} />
         </BoxTimer>
         <BoxButtons>
           <Continue>
             <Text text="Continuar" size="12px" color="#C13216" />
             <Text text="Navegando" size="12px" color="#C13216" />
           </Continue>
-          <LogOut onClick={handleNavigate}>
+          <LogOut data-cy="btn-logout" onClick={handleNavigate}>
             <Text            
               text="Logout"
               size="12px"

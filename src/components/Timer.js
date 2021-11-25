@@ -15,15 +15,12 @@ const TextA = styled.div`
 
 const Timer = ({ s }) => {
   const [seconds, setSeconds] = useState(s);
-  //   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     let interval = null;
-    // if (isActive) {
     interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
     }, 1000);
-    // }
 
     if (seconds === 0) {
       navigate('/')

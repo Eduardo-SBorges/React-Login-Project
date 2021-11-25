@@ -14,6 +14,15 @@
     "styled-components": "^5.3.3"
   },
   "scripts": {
+    "cypress": "cypress run",
+    "cypress:chrome": "cypress run -b chrome",
+    "cypress:firefox": "cypress run -b firefox",
+    "cypress:edge": "cypress run -b edge",
+    "cypress:ie": "cypress run -b ie",
+    "cypress:safari": "cypress run -b safari",
+    "cypress:opera": "cypress run -b opera",
+    "cypress:brave": "cypress run -b brave",
+    "cypress:open": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"
