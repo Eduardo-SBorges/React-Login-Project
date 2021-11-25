@@ -2,12 +2,33 @@ import React from 'react';
 import Text from './Text';
 import styled from 'styled-components';
 
+const Box = styled.div`
+    text-align: center;
+  `;
+
 const CurrentTime = () => {
   const newDate = new Date();
 
   const hours = newDate.getHours();
-  const minutes = newDate.getUTCMinutes();
-  
+  const [minutes, setMinutes] = React.useState(newDate.getUTCMinutes());
+  const [seconds, setSeconds] = React.useState(0);
+
+  React.useEffect(() => {
+    let interval = null;
+    interval = setInterval(() => {
+      setSeconds((seconds) => seconds + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [seconds]);
+
+  React.useEffect(() => {
+    let interval = null;
+    interval = setInterval(() => {
+      setMinutes(newDate.getUTCMinutes())
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [seconds]);
+
   const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 
   const day = newDate.getDate();
@@ -83,10 +104,6 @@ const CurrentTime = () => {
   const year = newDate.getFullYear();
 
   const date = `${week}, ${day} de ${month} de ${year}`;
-
-  const Box = styled.div`
-    text-align: center;
-  `;
 
   return (
 

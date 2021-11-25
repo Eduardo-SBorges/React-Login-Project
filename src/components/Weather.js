@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { getWeather } from '../api/api';
 
-const Weather = () => {
-  const [weather, setWeather] = React.useState(false);
-
-  const Climate = styled.div`
+const Climate = styled.div`
     display: flex;
     flex-direction: column;
     margin: 25px 41px;
@@ -15,7 +12,7 @@ const Weather = () => {
     line-height: 18px;
     width: 119px;
     text-align: center;
-    font-family: 'Mark Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
   `;
   const TemperatureContainer = styled.div`
     display: flex;
@@ -27,12 +24,16 @@ const Weather = () => {
     font-size: 48px;
     font-weight: bold;
     margin-left: 4px;
-    font-family: 'Mark Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
   `;
   const ClimateIcon = styled.img`
     width: 40.78px;
     height: 48.58px;
   `;
+
+const Weather = () => {
+  const [weather, setWeather] = React.useState(false);
+
   React.useEffect(() => {
     getWeather(-30.0331, -51.23).then((data) => setWeather(data));
   }, []);

@@ -5,6 +5,7 @@
 /.pnp
 /.vscode
 package-lock.json
+yarn.lock
 .pnp.js
 
 # testing
