@@ -56,6 +56,7 @@ const Input = ({
   onChange,
   value,
   marginTop,
+  dataCy,
 }) => {
   return (
     <Box
@@ -72,6 +73,7 @@ const Input = ({
         value={value}
         marginTop={marginTop}
         autocomplete="off"
+        data-cy={dataCy}
       />
       <Icon>
         <img src={src} alt={alt} />

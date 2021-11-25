@@ -19,7 +19,7 @@ describe("[CurrentTime's Component] must render in the home page.", () => {
 
     const hours = newDate.getHours();
     const minutes = newDate.getUTCMinutes();
-    const time = `${hours < 10 ? '0' : ''}${hours}:${minutes}`;
+    const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 
     expect(screen.getByText(time)).toBeInTheDocument();
   });
