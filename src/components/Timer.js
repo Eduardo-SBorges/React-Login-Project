@@ -12,7 +12,6 @@ const TextA = styled.div`
   margin-top: -10%;
 `;
 
-
 const Timer = ({ s }) => {
   const [seconds, setSeconds] = useState(s);
   const navigate = useNavigate();
@@ -27,7 +26,7 @@ const Timer = ({ s }) => {
     }
 
     return () => clearInterval(interval);
-  }, [seconds]);
+  }, [seconds, navigate]);
 
   return (
     <>

@@ -27,7 +27,7 @@ const CurrentTime = () => {
       setMinutes(newDate.getUTCMinutes())
     }, 1000);
     return () => clearInterval(interval);
-  }, [seconds]);
+  }, [seconds, newDate]);
 
   const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 
