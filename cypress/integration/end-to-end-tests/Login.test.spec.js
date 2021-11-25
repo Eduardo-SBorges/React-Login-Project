@@ -82,7 +82,7 @@ describe('Logout UI', () => {
 
     })
 
-    it('Should log out when button "logout" and return to login page".', () => {
+    it('Should log out after "x" seconds logged".', () => {
 
         cy.visit('/')
         cy.contains('Olá,').should('to.have.length', 1)

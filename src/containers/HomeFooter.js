@@ -20,7 +20,7 @@ const Line = styled.div`
   margin-bottom: 2%;
   margin-left: 1%;
   margin-right: 2%;
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     display: none;
   }
 `;
@@ -29,7 +29,7 @@ const BoxTextA = styled.div`
   text-align: end;
   margin-left: 10%;
   width: 45%;
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     display: none;
   }
 `;
@@ -41,7 +41,7 @@ const BoxTimer = styled.div`
   width: 21%;
   margin-right: 12%;
   padding: 1px 0;
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     display: none;
   }
 `;
@@ -49,7 +49,7 @@ const BoxTimer = styled.div`
 const BoxTextB = styled.div`
   text-align: end;
   width: 40%;
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     display: none;
   }
 `;
@@ -59,7 +59,7 @@ const BoxButtons = styled.div`
   justify-content: end;
   width: 30%;
   align-self: stretch;
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
@@ -75,7 +75,7 @@ const Continue = styled.div`
   width: 50%;
   background-color: #fff;
   /* cursor: pointer; */
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     width: 100%;
     height: 13vh;
   }
@@ -87,7 +87,7 @@ const LogOut = styled.div`
   align-items: center;
   width: 50%;
   cursor: pointer;
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     width: 25%;
     height: 13vh;
   }
