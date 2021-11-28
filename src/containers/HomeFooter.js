@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Text from "../components/Text";
 import Timer from "../components/Timer";
+import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 
 const BoxFooter = styled.footer`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 13vh;
+  height: ${(props) => props.height};
   background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
 `;
 
@@ -93,13 +94,13 @@ const LogOut = styled.div`
   }
 `;
 
-const Footer = () => {
+const Footer = ({height}) => {
   const navigate = useNavigate();
   const handleNavigate = () => navigate("/");
 
   return (
     <>
-      <BoxFooter data-testid="test-HomeFooter-component">
+      <BoxFooter height={height} data-testid="test-HomeFooter-component">
         <BoxTextA>
           <Text
             text="Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a"
@@ -136,6 +137,14 @@ const Footer = () => {
       </BoxFooter>
     </>
   );
+};
+
+Footer.propTypes = {
+  height: PropTypes.string,
+};
+
+Footer.defaultProps = {
+  height: '13vh',
 };
 
 export default Footer;
