@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Text from './Text';
+import PropTypes from 'prop-types';
 
 const Btn = styled.button`
   color: white;
@@ -18,8 +19,16 @@ const Btn = styled.button`
   }
 `;
 
-const Button = () => {
-  return <Btn data-cy="btn-submit">{<Text text="Continuar" size="18px" weight="700" />}</Btn>;
+const Button = ({btnText}) => {
+  return <Btn data-cy="btn-submit">{<Text text={btnText} size="18px" weight="700" />}</Btn>;
 };
+
+Button.propTypes = {
+  btnText: PropTypes.string,
+}
+
+Button.defaultProps = {
+  btnText: 'Continuar',
+}
 
 export default Button;
