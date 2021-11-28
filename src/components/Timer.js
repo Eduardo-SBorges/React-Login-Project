@@ -15,6 +15,7 @@ const TextA = styled.div`
 const Timer = ({ s }) => {
   const [seconds, setSeconds] = useState(s);
   const navigate = useNavigate();
+  
   useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
