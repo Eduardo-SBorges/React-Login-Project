@@ -1,12 +1,13 @@
-import React from 'react';
-import Text from './Text';
-import styled from 'styled-components';
+import React from "react";
+import Text from "./Text";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Box = styled.div`
-    text-align: center;
-  `;
+  text-align: center;
+`;
 
-const CurrentTime = () => {
+const CurrentTime = ({ customMargin }) => {
   const newDate = new Date();
 
   const hours = newDate.getHours();
@@ -24,37 +25,39 @@ const CurrentTime = () => {
   React.useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
-      setMinutes(newDate.getUTCMinutes())
+      setMinutes(newDate.getUTCMinutes());
     }, 1000);
     return () => clearInterval(interval);
   }, [seconds, newDate]);
 
-  const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+  const time = `${hours < 10 ? "0" : ""}${hours}:${
+    minutes < 10 ? "0" : ""
+  }${minutes}`;
 
   const day = newDate.getDate();
   let week = newDate.getDay() - 1;
 
   switch (week) {
+    case -1:
+      week = "domingo";
+      break;
     case 0:
-      week = 'segunda-feira';
+      week = "segunda-feira";
       break;
     case 1:
-      week = 'terça-feira';
+      week = "terça-feira";
       break;
     case 2:
-      week = 'quarta-feira';
+      week = "quarta-feira";
       break;
     case 3:
-      week = 'quinta-feira';
+      week = "quinta-feira";
       break;
     case 4:
-      week = 'sexta-feira';
+      week = "sexta-feira";
       break;
     case 5:
-      week = 'sábado';
-      break;
-    case 6:
-      week = 'domingo';
+      week = "sábado";
       break;
     default:
   }
@@ -63,40 +66,40 @@ const CurrentTime = () => {
 
   switch (month) {
     case 0:
-      month = 'Janeiro';
+      month = "Janeiro";
       break;
     case 1:
-      month = 'Fevereiro';
+      month = "Fevereiro";
       break;
     case 2:
-      month = 'Março';
+      month = "Março";
       break;
     case 3:
-      month = 'Abril';
+      month = "Abril";
       break;
     case 4:
-      month = 'Maio';
+      month = "Maio";
       break;
     case 5:
-      month = 'Junho';
+      month = "Junho";
       break;
     case 6:
-      month = 'Julho';
+      month = "Julho";
       break;
     case 7:
-      month = 'Agosto';
+      month = "Agosto";
       break;
     case 8:
-      month = 'Setembro';
+      month = "Setembro";
       break;
     case 9:
-      month = 'Outubro';
+      month = "Outubro";
       break;
     case 10:
-      month = 'Novembro';
+      month = "Novembro";
       break;
     case 11:
-      month = 'Dezembro';
+      month = "Dezembro";
       break;
     default:
   }
@@ -106,12 +109,19 @@ const CurrentTime = () => {
   const date = `${week}, ${day} de ${month} de ${year}`;
 
   return (
-
     <Box data-testid="test-CurrentTime-component">
       <Text text={time} size="144px" color="#222" margin="0" weight="700" />
-      <Text text={date} size="14px" color="#222" margin="-13% 0 0 0" />
+      <Text text={date} size="14px" color="#222" margin={customMargin} />
     </Box>
   );
+};
+
+CurrentTime.propTypes = {
+  customMargin: PropTypes.string,
+};
+
+CurrentTime.defaultProps = {
+  customMargin: "-13% 0 0 0",
 };
 
 export default CurrentTime;
