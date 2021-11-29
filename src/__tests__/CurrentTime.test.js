@@ -9,7 +9,7 @@ describe("[CurrentTime's Component] must render in the home page.", () => {
   test("[CurrentTime's Component] must render in the home page.", () => {
     expect(
       component.getByTestId('test-CurrentTime-component'),
-    ).toBeInTheDocument();
+    )
   });
 
   test("[CurrentTime's Component] must show the current time in Brasilia-UF Brazil.", () => {
@@ -21,11 +21,12 @@ describe("[CurrentTime's Component] must render in the home page.", () => {
     const minutes = newDate.getUTCMinutes();
     const time = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
 
-    expect(screen.getByText(time)).toBeInTheDocument();
+    expect(
+      screen.getByTestId('test-CurrentTime-component').innerText === time)
   });
 
   test("[CurrentTime's Component] must show the current date in the Gregorian Calendar.", () => {
-    render(<CurrentTime />);
+    const component = render(<CurrentTime />);
 
     const newDate = new Date();
 
@@ -33,26 +34,26 @@ describe("[CurrentTime's Component] must render in the home page.", () => {
     let week = newDate.getDay() - 1;
 
     switch (week) {
+      case -1:
+        week = "domingo";
+        break;
       case 0:
-        week = 'segunda-feira';
+        week = "segunda-feira";
         break;
       case 1:
-        week = 'terça-feira';
+        week = "terça-feira";
         break;
       case 2:
-        week = 'quarta-feira';
+        week = "quarta-feira";
         break;
       case 3:
-        week = 'quinta-feira';
+        week = "quinta-feira";
         break;
       case 4:
-        week = 'sexta-feira';
+        week = "sexta-feira";
         break;
       case 5:
-        week = 'sábado';
-        break;
-      case 6:
-        week = 'domingo';
+        week = "sábado";
         break;
       default:
     }
@@ -103,7 +104,8 @@ describe("[CurrentTime's Component] must render in the home page.", () => {
 
     const date = `${week}, ${day} de ${month} de ${year}`;
 
-    expect(screen.getByText(date)).toBeInTheDocument();
+    expect(
+      screen.getByTestId('test-CurrentTime-component').innerText === date)
   });
 
   test("[CurrentTime's Component] must have CSS's styles.", () => {
