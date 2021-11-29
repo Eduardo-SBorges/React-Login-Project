@@ -8,15 +8,18 @@ export default {
 };
 
 const Template = (args) => {
-  return (<>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Timer {...args} />} />
-      </Routes>
-    </HashRouter>
-  </>)}
+  return (
+    <>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Timer {...args} />} />
+        </Routes>
+      </HashRouter>
+    </>
+  );
+};
 
 export const MainTimer = Template.bind({});
 MainTimer.args = {
-  s = 5,
+  s = '5'
 };
