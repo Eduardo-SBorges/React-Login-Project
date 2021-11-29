@@ -11,10 +11,10 @@ const Field = styled.input`
   margin-top: ${(props) => props.marginTop};
   font-size: ${(props) => props.fontSize};
   letter-spacing: ${(props) => props.letterSpacing};
-  color: #ffffff;
+  color: ${(props) => props.color};
   &::placeholder {
     font-size: ${(props) => props.fontSize};
-    color: #ffffff;
+    color: ${(props) => props.color};
   }
   &:focus {
     outline: none;
@@ -50,6 +50,7 @@ const Input = ({
   src,
   alt,
   margin,
+  color,
   borderColor,
   fontSize,
   letterSpacing,
@@ -70,6 +71,7 @@ const Input = ({
         onChange={onChange}
         fontSize={fontSize}
         letterSpacing={letterSpacing}
+        color={color}
         value={value}
         marginTop={marginTop}
         autocomplete="off"
@@ -82,7 +84,7 @@ const Input = ({
   );
 };
 
-Text.propTypes = {
+Input.propTypes = {
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
@@ -91,11 +93,13 @@ Text.propTypes = {
   margin: PropTypes.string,
   borderColor: PropTypes.string,
   letterSpacing: PropTypes.string,
+  color: PropTypes.string
 };
 
-Text.defaultProps = {
+Input.defaultProps = {
   fontSize: "16px",
   letterSpacing: "0",
+  color: '#ffff',
 };
 
 export default Input;

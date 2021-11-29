@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import Text from './Text';
+import PropTypes from "prop-types";
 
 const BoxTimer = styled.div`
   text-align: center;
@@ -15,6 +16,7 @@ const TextA = styled.div`
 const Timer = ({ s }) => {
   const [seconds, setSeconds] = useState(s);
   const navigate = useNavigate();
+  
   useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
@@ -39,5 +41,14 @@ const Timer = ({ s }) => {
     </>
   );
 };
+
+Timer.propTypes = {
+  s: PropTypes.number.isRequired
+}
+
+Timer.defaultProps = {
+  s: 5
+}
+
 
 export default Timer;
